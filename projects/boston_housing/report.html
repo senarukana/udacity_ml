@@ -11814,8 +11814,6 @@ div#notebook {
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>/usr/local/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
   &#34;This module will be removed in 0.20.&#34;, DeprecationWarning)
-/usr/local/lib/python2.7/site-packages/sklearn/learning_curve.py:23: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the functions are moved. This module will be removed in 0.20
-  DeprecationWarning)
 </pre>
 </div>
 </div>
@@ -11823,6 +11821,14 @@ div#notebook {
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Boston housing dataset has 489 data points with 4 variables each.
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/usr/local/lib/python2.7/site-packages/sklearn/learning_curve.py:23: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the functions are moved. This module will be removed in 0.20
+  DeprecationWarning)
 </pre>
 </div>
 </div>
@@ -11935,7 +11941,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> increase: RM, PTRATIO decrease: LSTAT</p>
+<p><strong>Answer: </strong> if RM is bigger, it means that neighbors are richer and people may be fewer in the place, so the homes may be more secure. So it will postively affect the price of homes. If LSTAT is high, it means that neighbors are poor so the place may not that secure. If PTRATIO is high, it means that the education resources and quality may not be that good. Therefore both LSTAT and PTRATIO may adversely affect the price of homes.</p>
 
 </div>
 </div>
@@ -12066,7 +12072,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> success model</p>
+<p><strong>Answer:</strong> R^2 is close to 1. It may be a succefull model.</p>
 
 </div>
 </div>
@@ -12099,7 +12105,7 @@ Standard deviation of prices: $165,171.13
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span> 
 
 <span class="c1"># TODO: Shuffle and split the data into training and testing subsets</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Success</span>
 <span class="k">print</span> <span class="s2">&quot;Training and testing split was successful.&quot;</span>
@@ -12140,7 +12146,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Biased or overfiting</p>
+<p><strong>Answer: </strong> avoid overfitting to a specific training dataset</p>
 
 </div>
 </div>
@@ -14659,7 +14665,7 @@ zKyGOVkzMzMzq2FO1szMzMxqmJM1MzMzsxr2/3ZudNfamS+nAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> GridSearch is a way of finding the best parameters for a learning algorithm.</p>
+<p><strong>Answer: </strong> There are some hyper-parameters that are not direly learnt within estimators. GridSearch is a way of finding such parameters in order to train a good model. We can provide a list of to be tested parameters to get the best hyper-parameters for the model.</p>
 
 </div>
 </div>
@@ -14680,7 +14686,7 @@ zKyGOVkzMzMzq2FO1szMzMxqmJM1MzMzsxr2/3ZudNfamS+nAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> k-fold cross-validation is a technical to benchmark a learning algorithm by spliting the training set and test set.</p>
+<p><strong>Answer: </strong> k-fold cross-validation is a technical to benchmark a learning algorithm by spliting the training set and test set. The dataset wil be randomly paritioned into k equal sized splits. One is used for testing, remainings are used for training. GridSearch require data to be executed multiple times to estimate the accuracy of each parameter sets.</p>
 
 </div>
 </div>
@@ -14716,7 +14722,7 @@ zKyGOVkzMzMzq2FO1szMzMxqmJM1MzMzsxr2/3ZudNfamS+nAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;make_scorer&#39;, &#39;DecisionTreeRegressor&#39;, and &#39;GridSearchCV&#39;</span>
@@ -14729,7 +14735,7 @@ zKyGOVkzMzMzq2FO1szMzMxqmJM1MzMzsxr2/3ZudNfamS+nAAAAAElFTkSuQmCC
     
     <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
     
-    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]}</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)}</span>
     
     <span class="n">scoring_func</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">performance_metric</span><span class="p">)</span>
     
@@ -14768,7 +14774,7 @@ zKyGOVkzMzMzq2FO1szMzMxqmJM1MzMzsxr2/3ZudNfamS+nAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Fit the training data to the model using grid search</span>
@@ -14788,7 +14794,7 @@ zKyGOVkzMzMzq2FO1szMzMxqmJM1MzMzsxr2/3ZudNfamS+nAAAAAElFTkSuQmCC
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Parameter &#39;max_depth&#39; is 10 for the optimal model.
+<pre>Parameter &#39;max_depth&#39; is 4 for the optimal model.
 </pre>
 </div>
 </div>
@@ -14802,7 +14808,7 @@ zKyGOVkzMzMzq2FO1szMzMxqmJM1MzMzsxr2/3ZudNfamS+nAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> 10</p>
+<p><strong>Answer: </strong> 4. It's identical to the guess in Q6.</p>
 
 </div>
 </div>
@@ -14851,7 +14857,7 @@ zKyGOVkzMzMzq2FO1szMzMxqmJM1MzMzsxr2/3ZudNfamS+nAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Produce a matrix for client data</span>
@@ -14874,9 +14880,9 @@ zKyGOVkzMzMzq2FO1szMzMxqmJM1MzMzsxr2/3ZudNfamS+nAAAAAElFTkSuQmCC
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predicted selling price for Client 1&#39;s home: $394,200.00
-Predicted selling price for Client 2&#39;s home: $214,200.00
-Predicted selling price for Client 3&#39;s home: $966,000.00
+<pre>Predicted selling price for Client 1&#39;s home: $419,111.54
+Predicted selling price for Client 2&#39;s home: $233,887.50
+Predicted selling price for Client 3&#39;s home: $897,750.00
 </pre>
 </div>
 </div>
@@ -14891,9 +14897,22 @@ Predicted selling price for Client 3&#39;s home: $966,000.00
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>Predicted selling price for Client 1's home: $394,200.00</p>
-<p>Predicted selling price for Client 2's home: $214,200.00</p>
-<p>Predicted selling price for Client 3's home: $966,000.00</p>
+<p>Predicted selling price for Client 1's home: $419,111.54
+Predicted selling price for Client 2's home: $233,887.50
+Predicted selling price for Client 3's home: $897,750.00</p>
+<p>features describe infomartion:
+           RM   LSTAT  PTRATIO        MEDV
+count 489.000 489.000  489.000     489.000
+mean    6.240  12.940   18.517  454342.945
+std     0.644   7.082    2.111  165340.278
+min     3.561   1.980   12.600  105000.000
+25%     5.880   7.370   17.400  350700.000
+50%     6.185  11.690   19.100  438900.000
+75%     6.575  17.120   20.200  518700.000
+max     8.398  37.970   22.000 1024800.000</p>
+<p>According to guesses on Q1, RM is positively affected to price, while LSTAT and PTRATIO are negatively affected. 
+We firstly investigate on Client 3, we can find RM is high(near to max rm), meanwhile LSTAT and PTRATIO are low. That's the reason why the price is near to max(MEDV) in provided data.
+When we compare Client1 to Client2, we find Client1 RM is higher, LSTAT and PTRATIO is lower than Client2. That's also explain the relationship of prices between these 3 features.</p>
 
 </div>
 </div>
