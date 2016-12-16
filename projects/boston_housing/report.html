@@ -13847,7 +13847,8 @@ xhenzMzMzMzMzMysaf4PH9dWh6Nv1CIAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> choose max_depth=6 picture, testing and training score are both convergent. Will not benefit the model.</p>
+<p><strong>Answer: </strong> choose max_depth=3 picture. The best model we wanted is that has the best testing score. When max_depth becomes larger than 3, the training score is increasing, but the testing score is decresing which means that the model is overfiting. 
+Also testing and training score both have been converged when data points reached 200 points. Increasing points will not benefit the model.</p>
 
 </div>
 </div>
@@ -14665,7 +14666,7 @@ zKyGOVkzMzMzq2FO1szMzMxqmJM1MzMzsxr2/3ZudNfamS+nAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> There are some hyper-parameters that are not direly learnt within estimators. GridSearch is a way of finding such parameters in order to train a good model. We can provide a list of to be tested parameters to get the best hyper-parameters for the model.</p>
+<p><strong>Answer: </strong> There are some hyper-parameters that are not direly learnt within estimators. GridSearch is a way of finding such parameters in order to train a good model. We can provide a list of to be tested parameters to get the best hyper-parameters for the model. When we need to test more than one parameters, it will test every possible sets and find the best set of parameter which has best average score.</p>
 
 </div>
 </div>
@@ -14686,7 +14687,7 @@ zKyGOVkzMzMzq2FO1szMzMxqmJM1MzMzsxr2/3ZudNfamS+nAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> k-fold cross-validation is a technical to benchmark a learning algorithm by spliting the training set and test set. The dataset wil be randomly paritioned into k equal sized splits. One is used for testing, remainings are used for training. GridSearch require data to be executed multiple times to estimate the accuracy of each parameter sets.</p>
+<p><strong>Answer: </strong> k-fold cross-validation is a technical to benchmark a learning algorithm by spliting the training set and test set. The dataset wil be randomly paritioned into k equal sized splits. One is used for testing, remainings are used for training. GridSearch require data to be executed multiple times to estimate the accuracy of each parameter sets. As a set of paramater may happen to be good at specific dataset and bad to others, GridSearchCV use Cross-Validation methods to avoid this, it will calculate the average scores for K-Fold datasets.</p>
 
 </div>
 </div>
